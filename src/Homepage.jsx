@@ -1,20 +1,64 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import Introduction from './components/Introduction'
-import Skills from './components/Skills'
-import Education from './components/Education'
+import React from "react";
+
+import Navbar from "./components/Navbar";
+import Introduction from "./components/Introduction";
+import Skills from "./components/Skills";
+import Education from "./components/Education";
+
 const Homepage = () => {
   return (
-    <div>
-      <div className="min-h-screen w-full bg-scroll bg-no-repeat bg-cover bg-center bg-[url('https://d.newsweek.com/en/full/1386171/universe-big-bang.jpg')]">
-      <div className='bg-black/50 w-full min-h-screen'>
-      <Navbar></Navbar>
-      <Introduction></Introduction>
-      </div></div>
-      <Skills></Skills>
-      <Education></Education>
-    </div>
-  )
-}
+    <main className="bg-black overflow-x-hidden">
 
-export default Homepage
+      {/* HERO SECTION */}
+      <section
+        className="
+          relative
+          min-h-screen
+          w-full
+          overflow-hidden
+        "
+      >
+
+        {/* Optional Background Image */}
+        <div
+          className="
+            absolute
+            inset-0
+            bg-cover
+            bg-center
+            opacity-20
+          "
+          style={{
+            backgroundImage:
+              "url('/images/hero-bg.jpg')",
+          }}
+        />
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60" />
+
+        {/* Content */}
+        <div className="relative z-10">
+
+          <Navbar />
+
+          <Introduction />
+
+        </div>
+      </section>
+
+      {/* SKILLS */}
+      <section className="relative z-20">
+        <Skills />
+      </section>
+
+      {/* EDUCATION + ACHIEVEMENTS */}
+      <section className="relative z-20">
+        <Education />
+      </section>
+
+    </main>
+  );
+};
+
+export default Homepage;
